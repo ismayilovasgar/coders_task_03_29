@@ -104,7 +104,6 @@ students.map((student) => {
     console.log(
       `Address: ${student_address.name} Pogramming Language: ${student_skill.name}`
     );
-
     console.log(
       `Name: ${student.name} Surname: ${student.surname} - Grade: ${student.grade} low grade than 90 `
     );
