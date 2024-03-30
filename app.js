@@ -99,7 +99,6 @@ console.log(">>>>>>>>>>>>>>>>>>>>>");
 students.map((student) => {
   if (student.grade < 90) {
     let student_skill = skills.find((s) => s.id === student.skill_id);
-
     let student_address = addresses.find((a) => a.id === student.address_id);
 
     console.log(
