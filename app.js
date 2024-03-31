@@ -120,6 +120,7 @@ function asagi_neticeler_2() {
 function asagi_neticeler() {
   console.log("Neticesi 90-dan asagi olan telebeler:");
   let filter_student = students.filter((student) => student.grade < 90);
+
   if (filter_student.length > 0) {
     filter_student.map((student) =>
       console.log(
