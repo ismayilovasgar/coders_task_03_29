@@ -103,7 +103,6 @@ function asagi_neticeler_2() {
   console.log("Neticesi 90-dan asagi olan telebeler:");
   students.map((student) => {
     if (student.grade < 90) {
-
       let student_skill = skills.find((s) => s.id === student.skill_id);
       let student_address = addresses.find((a) => a.id === student.address_id);
       console.log(
@@ -112,7 +111,6 @@ function asagi_neticeler_2() {
       console.log(
         `Ad: ${student.name} Soyad: ${student.surname} - Netice: ${student.grade} --- 90-dan asagidir !`
       );
-    
     }
   });
 }
