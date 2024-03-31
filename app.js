@@ -33,7 +33,7 @@ let students = [
     age: 26,
     skill_id: 4,
     address_id: 70,
-    grade: 90,
+    grade: 70,
     hobby: "football",
   },
   {
@@ -43,7 +43,7 @@ let students = [
     age: 26,
     skill_id: 2,
     address_id: 90,
-    grade: 73,
+    grade: 93,
     hobby: "basketball",
   },
 ];
@@ -83,30 +83,51 @@ let skills = [
 ];
 
 //- 4
-let sum = 0;
-let count = 0;
+function sinif_ortalamasi() {
+  let cemi = 0;
+  // let count = 0;
+  students.map((student) => {
+    // count++;
+    cemi += student.grade;
+  });
 
-students.map((student) => {
-  count++;
-  sum += student.grade;
-});
+  let ortalama = cemi / students.length;
+  console.log(`Telebelerin Ortalamasi: ${ortalama.toFixed(2)}`);
+  // console.log(`Telebelerin Ortalamasi: ${(cemi / count).toFixed(2)}`);
+  return ortalama;
+}
+sinif_ortalamasi();
 
-console.log(`Averages of Students: ${(sum / count).toFixed(2)}`);
+//- 5 - qarisiq
+function asagi_neticeler_2() {
+  console.log("Neticesi 90-dan asagi olan telebeler:");
+  students.map((student) => {
+    if (student.grade < 90) {
 
-//-5
-console.log("students that grades are low than 90 ");
-console.log(">>>>>>>>>>>>>>>>>>>>>");
-students.map((student) => {
-  if (student.grade < 90) {
-    let student_skill = skills.find((s) => s.id === student.skill_id);
-    let student_address = addresses.find((a) => a.id === student.address_id);
+      let student_skill = skills.find((s) => s.id === student.skill_id);
+      let student_address = addresses.find((a) => a.id === student.address_id);
+      console.log(
+        `Unvani: ${student_address.name} , Programalama Dili: ${student_skill.name}`
+      );
+      console.log(
+        `Ad: ${student.name} Soyad: ${student.surname} - Netice: ${student.grade} --- 90-dan asagidir !`
+      );
+    
+    }
+  });
+}
+// asagi_neticeler_2();
 
-    console.log(
-      `Address: ${student_address.name} Pogramming Language: ${student_skill.name}`
+//- 5 - sade
+function asagi_neticeler() {
+  console.log("Neticesi 90-dan asagi olan telebeler:");
+  let filter_student = students.filter((student) => student.grade < 90);
+  if (filter_student.length > 0) {
+    filter_student.map((student) =>
+      console.log(
+        `Ad: ${student.name} Soyad: ${student.surname} - Netice: ${student.grade} --- 90-dan asagidir ! `
+      )
     );
-    console.log(
-      `Name: ${student.name} Surname: ${student.surname} - Grade: ${student.grade} low grade than 90 `
-    );
-    console.log(">>>>>>>>>>>>>>>>>>>>>");
-  }
-});
+  } else console.log("Neticesi 90-dan asagi telebe yoxdur");
+}
+asagi_neticeler();
