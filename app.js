@@ -119,10 +119,10 @@ function asagi_neticeler_2() {
 //- 5 - sade
 function asagi_neticeler() {
   console.log("Neticesi 90-dan asagi olan telebeler:");
-  let filter_student = students.filter((student) => student.grade < 90);
+  let filter_students = students.filter((student) => student.grade < 90);
 
-  if (filter_student.length > 0) {
-    filter_student.map((student) =>
+  if (filter_students.length > 0) {
+    filter_students.map((student) =>
       console.log(
         `Ad: ${student.name} Soyad: ${student.surname} - Netice: ${student.grade} --- 90-dan asagidir ! `
       )
